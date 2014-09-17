@@ -40,13 +40,13 @@ Examples
     
     # Delete a connection:
     
-    del conf['conn', 'myconn']
+    del conf['conn', 'mynewconn']
     
     # Same thing with certification authorities. Create a CA:
     
     conf['ca', 'myca'] = {
-        'cacert': 'MyCert.pem'
-        'crluri': 'http://crl.example.com/mycrl.crl'
+        'cacert': 'MyCert.pem',
+        'crluri': 'http://crl.example.com/mycrl.crl',
         'auto': 'add'
     }
     
@@ -96,7 +96,7 @@ Examples
     for name, section in conf.conn_filter(
         Keys('left', 'right').contains('192.168.0.1')
     ):
-        del conf[name]
+        del conf['conn', name]
 
 
 GitHub repo: https://github.com/leforestier/ipsecparse
