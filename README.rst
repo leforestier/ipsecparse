@@ -1,5 +1,14 @@
 Parse and edit your ipsec configuration files (ipsec.conf)
 
+Installation
+~~~~~~~~~~~~
+
+To install ipsecparse, simply:
+
+.. code-block:: console
+
+    pip install ipsecparse
+
 Examples
 ~~~~~~~~
 
