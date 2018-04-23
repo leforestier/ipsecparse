@@ -20,6 +20,7 @@ ca strongswan  #define alternative CRL distribution point
 conn %default
     keyingtries=1
     keyexchange=ikev2
+    testidentity=@#510eba04d10dc0e631a5c298686b9a15
 
 conn roadwarrior
     leftsubnet=10.1.0.0/16
@@ -42,6 +43,7 @@ ca strongswan
 conn %default
     keyingtries=1
     keyexchange=ikev2
+    testidentity=@#510eba04d10dc0e631a5c298686b9a15
 
 conn roadwarrior
     leftsubnet=10.1.0.0/16

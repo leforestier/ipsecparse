@@ -17,7 +17,11 @@ class Lexer(object):
         r'\n'
         
     def t_ignore_COMMENT(self, token):
-        r'\#.*'
+        r'(?!<@)\#.*'
+        # The @# sequence is used in strongswan.
+        # The #, if preceded by a @ should not be interepreted as a comment.
+        # See https://wiki.strongswan.org/projects/strongswan/wiki/IdentityParsing
+        # The issue was raised in https://github.com/leforestier/ipsecparse/pull/3/files
 
     def t_SECTION_TYPE(self, token):
         if token.value == 'include':
@@ -33,7 +37,7 @@ class Lexer(object):
     t_KEY.__doc__ = r'^[ \t]+' + _name + r'[ \t]*=[ \t]*'
     
     def t_VALUE(self, token):
-        r'[^ \t\n\#"]+'
+        r'([^ \t\n\#"]|(?<=@)#)+'
         return token
     
     def t_DOUBLE_QUOTED_VALUE(self, token):
@@ -42,7 +46,7 @@ class Lexer(object):
         #  entire value is enclosed in double quotes (");
         #  a value cannot itself contain a double quote, 
         #  nor may it be continued across more than one line."
-        r'"[^"\n\#]*"'
+        r'"([^"\n\#]|(?<=@)#)*"'
         token.value = token.value[1:-1]
         return token
 
