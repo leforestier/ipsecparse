@@ -31,7 +31,7 @@ A bit more documentation is available at:
     
 
 __author__ = "Benjamin Le Forestier (benjamin@leforestier.org)"
-__version__ = '0.1.0'
+__version__ = '0.2.0'
 
 
 from ipsecparse.parser import loads
