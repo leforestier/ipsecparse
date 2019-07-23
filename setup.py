@@ -11,7 +11,7 @@ with open('README.rst') as fd:
 
 setup(
     name='ipsecparse',
-    version='0.2.0',
+    version='0.3.0',
     packages=['ipsecparse'],
     install_requires = install_requires,
     author = 'Benjamin Le Forestier',
@@ -38,5 +38,5 @@ setup(
         'Topic :: Internet :: WWW/HTTP',
         'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
         'Topic :: Software Development :: Libraries :: Python Modules',
-    ]  
+    ]
 )

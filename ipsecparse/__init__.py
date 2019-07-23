@@ -24,14 +24,14 @@ del conf['conn', 'myconn']
 
 with open('/etc/ipsec.conf', 'w') as fd:
     fd.write(dumps(conf))
-    
+
 A bit more documentation is available at:
     https://github.com/leforestier/ipsecparse/blob/master/README.rst
 """
-    
+
 
 __author__ = "Benjamin Le Forestier (benjamin@leforestier.org)"
-__version__ = '0.2.0'
+__version__ = '0.3.0'
 
 
 from ipsecparse.parser import loads
