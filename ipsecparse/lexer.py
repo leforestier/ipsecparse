@@ -37,7 +37,7 @@ class Lexer(object):
     t_KEY.__doc__ = r'^[ \t]+' + _name + r'[ \t]*=[ \t]*'
     
     def t_VALUE(self, token):
-        r'([^ \t\n\#"]|(?<=@)#)+'
+        r'([^ \t\n\#"]|(?<=@)\#)+'
         return token
     
     def t_DOUBLE_QUOTED_VALUE(self, token):
@@ -46,7 +46,7 @@ class Lexer(object):
         #  entire value is enclosed in double quotes (");
         #  a value cannot itself contain a double quote, 
         #  nor may it be continued across more than one line."
-        r'"([^"\n\#]|(?<=@)#)*"'
+        r'"([^"\n\#]|(?<=@)\#)*"'
         token.value = token.value[1:-1]
         return token
 
